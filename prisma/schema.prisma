@@ -1,0 +1,44 @@
+// Prisma schema for Plinko Lab – Provably Fair Game
+// Uses SQLite for local development (can switch to PostgreSQL for production)
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Round {
+  id               String   @id @default(cuid())
+  createdAt        DateTime @default(now())
+
+  // Round status: CREATED | STARTED | REVEALED
+  status           String   @default("CREATED")
+
+  // Provably fair seeds
+  nonce            String
+  commitHex        String    // SHA256(serverSeed + ":" + nonce) — published before game starts
+  serverSeed       String    // Secret until revealed
+  clientSeed       String?   // Provided by client when starting
+  combinedSeed     String?   // SHA256(serverSeed + ":" + clientSeed + ":" + nonce)
+
+  // Peg map integrity hash
+  pegMapHash       String?   // SHA256(JSON.stringify(pegMap))
+
+  // Game parameters
+  rows             Int       @default(12)
+  dropColumn       Int?      // 0–12, chosen by player
+  binIndex         Int?      // Final landing bin (0–12)
+  payoutMultiplier Float?    // Multiplier for the landing bin
+
+  // Bet
+  betCents         Int?      // Bet amount in cents
+
+  // Path the ball took (JSON array of L/R decisions)
+  pathJson         String?   // JSON string of the path array
+
+  // Reveal timestamp
+  revealedAt       DateTime?
+}
