@@ -1,0 +1,125 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: var(--font-outfit);
+  --font-mono: var(--font-roboto-mono);
+  
+  --color-pond-deep: #004d4d;
+  --color-pond-mid: #008080;
+  --color-pond-light: #00cccc;
+  --color-pond-glow: rgba(0, 204, 204, 0.3);
+  
+  --color-stone-light: #d2b48c;
+  --color-stone-mid: #b8860b;
+  --color-stone-dark: #8b4513;
+  
+  --color-gold: #ffd700;
+  --color-brass: #e4b363;
+  --color-brass-dark: #b8860b;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background: radial-gradient(circle at center, var(--color-pond-mid) 0%, var(--color-pond-deep) 100%);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  font-family: var(--font-display);
+  overflow-x: hidden;
+  transition: background-image 1s ease-in-out;
+}
+
+/* Wooden / Tropical Pixel Art Panel */
+.aquatic-panel {
+  background-color: #8c5a35; /* Warm wood color */
+  border: 4px solid #4a2f1d;
+  box-shadow: 
+    inset 4px 4px 0px 0px rgba(255, 255, 255, 0.15),
+    inset -4px -4px 0px 0px rgba(0, 0, 0, 0.3),
+    6px 6px 0px 0px rgba(0, 0, 0, 0.35);
+  border-radius: 12px;
+  position: relative;
+}
+
+/* 3D Tactile Buttons - Chunky Pixel Style */
+.tactile-btn {
+  background-color: #5c8f47; /* Leafy green */
+  border: 4px solid #2e4d22;
+  border-radius: 8px;
+  color: #fff;
+  font-weight: 800;
+  padding: 12px 24px;
+  box-shadow: 
+    inset 4px 4px 0px 0px rgba(255, 255, 255, 0.3),
+    inset -4px -4px 0px 0px rgba(0, 0, 0, 0.3),
+    4px 4px 0px 0px rgba(0, 0, 0, 0.3);
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  text-shadow: 1px 1px 0px rgba(0,0,0,0.5);
+}
+
+.tactile-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 
+    inset 4px 4px 0px 0px rgba(255, 255, 255, 0.3),
+    inset -4px -4px 0px 0px rgba(0, 0, 0, 0.3),
+    6px 6px 0px 0px rgba(0, 0, 0, 0.3);
+}
+
+.tactile-btn:active:not(:disabled) {
+  transform: translateY(2px);
+  box-shadow: 
+    inset 4px 4px 0px 0px rgba(0, 0, 0, 0.3),
+    inset -4px -4px 0px 0px rgba(255, 255, 255, 0.2),
+    2px 2px 0px 0px rgba(0, 0, 0, 0.3);
+}
+
+.tactile-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  filter: grayscale(0.8);
+}
+
+.btn-primary {
+  background-color: #fca311; /* Golden yellow */
+  border-color: #9c6000;
+  color: #fff;
+}
+
+.btn-danger {
+  background-color: #d62828; /* Deep red */
+  border-color: #780000;
+}
+
+/* Ancient Stone Layouts -> Thick Wood Frame */
+.stone-frame {
+  background: #23160e; /* Very dark brown inside */
+  border: 8px solid #4a2f1d;
+  border-radius: 16px;
+  box-shadow: 
+    inset 8px 8px 0px 0px rgba(0,0,0,0.4),
+    8px 8px 0px 0px rgba(0,0,0,0.4);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-pond-deep);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-pond-mid);
+  border-radius: 5px;
+  border: 2px solid var(--color-pond-deep);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-pond-light);
+}
