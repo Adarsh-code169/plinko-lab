@@ -1,6 +1,6 @@
 # Pond of Plinko
 
-Working Video Link- https://docs.google.com/videos/d/1_5vsEQwK4yBWhtHBFWikzpZFYmFRZlqszX_ew6n9Lgk/edit?usp=sharing
+Working Video Link- https://drive.google.com/file/d/1S4PueYgld_a125S0pcdslvS2K5qt6s5-/view?usp=sharing
 
 Welcome to **Pond of Plinko**, a high-fidelity, provably fair Plinko web application. 
 
