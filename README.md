@@ -27,7 +27,7 @@ DATABASE_URL="file:./dev.db"
    ```bash
    npm run dev
    ```
-Open [http://localhost:3000](http://localhost:3000)
+Open https://plinko-lab-theta.vercel.app/
 
 ## 🏗️ Architecture Overview
 
@@ -69,5 +69,5 @@ The system runs on **Next.js 14 App Router**, leveraging serverless API routes f
 
 ## 🔗 Project Links
 
-- **Live App**: [Link to Deployment - Vercel/Render]
-- **Verifier Page**: `/verify` (accessible via the "Audit Hash" button after any drop).
+- **Live App**: https://plinko-lab-theta.vercel.app/
+
